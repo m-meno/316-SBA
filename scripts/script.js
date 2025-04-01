@@ -8,13 +8,15 @@
 
 
 
-window.confirm("Welcome, human! Press 'OK' to start recording your gratitude now.")
+window.confirm("Welcome! Press 'OK' to start recording your gratitude now.")
 
 let gratitudeInput = document.getElementById("gratitudeInput");
 let gratitudeForm = document.getElementById("gratitudeForm");
 let gratitudeList = document.getElementById("gratitudeList");
 let headers = document.querySelector("h1");
 let saveButton = document.getElementById("save");
+let clearButton = document.getElementById("clear");
+let deleteButton = document.getElementById("delete");
 
 headers.addEventListener(`mouseover`, handleMouseOver);
 
@@ -22,12 +24,15 @@ gratitudeForm.addEventListener(`submit`, handleSubmit);
 
 saveButton.addEventListener(`click`, handleSave);
 
+clearButton.addEventListener(`click`, handleClear);
+
+deleteButton.addEventListener(`click`, handleDelete);
 
 function handleSubmit(e){
     e.preventDefault();
     let input = gratitudeInput.value;
     if (input.trim() === ``){
-        alert(`No input received`)
+        window.alert(`Please write something you are grateful for!`);
         return;
     } else {
     let newGratitudeItem = document.createElement(`li`);
@@ -38,7 +43,7 @@ function handleSubmit(e){
 }
 
 function handleMouseOver(e){
-    e.target.style.color = "green";
+    e.target.style.color = "rgb(52, 95, 52)";
 }
 
 function handleSave(e){
@@ -53,3 +58,14 @@ function handleSave(e){
         const parseData = JSON.parse(savedData);
     }
 } 
+
+function handleClear(e){
+    while (gratitudeList.firstChild) {
+    
+    gratitudeList.removeChild(gratitudeList.lastChild);
+    }
+}
+
+function handleDelete(e){
+    gratitudeList.removeChild(gratitudeList.lastChild);
+}

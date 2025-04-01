@@ -1,4 +1,25 @@
-/* body {
+
+
+body {
     display: flex;
+    justify-content: center;
     text-align: center;
-} */
+    border: solid 
+}
+
+#form{
+    margin-bottom: 1rem;
+}
+
+#responses{
+    text-align: start;
+}
+
+button:hover{
+    background-color: rgb(160, 185, 160)
+}
+
+button{
+    margin-top: 0.5rem;
+    margin-right: 0.25rem;
+}
