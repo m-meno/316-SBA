@@ -1,25 +1,48 @@
+.open-sans {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "width" 100;
+  }
 
+ *{
+    background-color: #bbb8af;
+ } 
 
 body {
+    font-family: "Open Sans", sans-serif;
     display: flex;
     justify-content: center;
     text-align: center;
-    border: solid 
+    /* border: solid  */
+}
+
+#journal{
+    margin-top: 3rem; 
 }
 
 #form{
     margin-bottom: 1rem;
 }
 
+#email{
+    margin-top: 0.5rem;
+}
+
 #responses{
     text-align: start;
 }
 
-button:hover{
+/* button:hover{
     background-color: rgb(160, 185, 160)
-}
+} */
 
 button{
     margin-top: 0.5rem;
     margin-right: 0.25rem;
+}
+
+p {
+    text-decoration: none;
+    color: black;
 }
