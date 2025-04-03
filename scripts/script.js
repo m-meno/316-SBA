@@ -18,7 +18,6 @@ let saveButton = document.getElementById("save");
 let clearButton = document.getElementById("clear");
 let deleteButton = document.getElementById("delete");
 let journalPhoto = document.getElementById("journal");
-let emailForm = document.getElementById("email");
 let infoLink = document.getElementById("info");
 let ulFrag = document.createDocumentFragment();
 
