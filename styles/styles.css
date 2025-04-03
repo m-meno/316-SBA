@@ -33,9 +33,9 @@ body {
     text-align: start;
 }
 
-/* button:hover{
-    background-color: rgb(160, 185, 160)
-} */
+button:hover{
+    background-color: whitesmoke;
+}
 
 button{
     margin-top: 0.5rem;
@@ -45,4 +45,8 @@ button{
 p {
     text-decoration: none;
     color: black;
+}
+
+a {
+    text-decoration: none;
 }

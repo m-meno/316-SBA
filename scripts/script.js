@@ -4,7 +4,7 @@
 //Document fragment interface???? (only 2%);
 
 
-//ex: adjust style of a button after it has been clicked
+
 
 
 
@@ -20,6 +20,7 @@ let deleteButton = document.getElementById("delete");
 let journalPhoto = document.getElementById("journal");
 let emailForm = document.getElementById("email");
 let infoLink = document.getElementById("info");
+let ulFrag = document.createDocumentFragment();
 
 
 //headers.addEventListener(`mouseover`, handleMouseOver);
@@ -32,8 +33,6 @@ clearButton.addEventListener(`click`, handleClear);
 
 deleteButton.addEventListener(`click`, handleDelete);
 
-//emailForm.addEventListener('submit', validateEmail);
-
 infoLink.addEventListener(`click`, handleAClick);
 
 //journalPhoto.addEventListener('mouseenter', handleMouseenter);
@@ -44,17 +43,18 @@ function handleSubmit(e){
     if (input.trim() === ``){
         window.alert(`Please write something you are grateful for!`);
         return; 
-    } else {
+    } else if (input.length > 200) {
+        window.alert(`Too many characters.`);
+       }   else {
     let newGratitudeItem = document.createElement(`li`);
     newGratitudeItem.textContent = input;
-    gratitudeList.appendChild(newGratitudeItem);
+    ulFrag.appendChild(newGratitudeItem);
+    gratitudeList.appendChild(ulFrag);
     gratitudeInput.value = ` `;   
     }                                  //problem: my list only prevents an empty input at the beginning
 }
 
-// function handleMouseenter(e){
- 
-// }
+
 
 function handleSave(e){
     let savedItems = document.getElementsByTagName(`ul`);
@@ -80,12 +80,6 @@ function handleDelete(e){
     gratitudeList.removeChild(gratitudeList.lastChild);
 }
 
-// function validateEmail(e){
-//     let emailInput = emailForm.value;
-
-
-
-// }
 
 function handleAClick(e){
     e.preventDefault();
